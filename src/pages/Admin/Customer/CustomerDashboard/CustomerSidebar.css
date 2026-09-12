@@ -1,0 +1,153 @@
+/* Sidebar Container */
+.fk-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fk-sidebar-card {
+  background-color: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* User Profile Header */
+.fk-user-card {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 16px;
+}
+
+.fk-user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fk-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.fk-greeting {
+  font-size: 12px;
+  color: #878787;
+}
+
+.fk-username {
+  font-size: 16px;
+  font-weight: 500;
+  color: #212121;
+  margin: 2px 0 0;
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Nav Menu Card */
+.fk-nav-card {
+  padding-bottom: 8px;
+}
+
+.fk-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 12px;
+  text-decoration: none;
+}
+
+.fk-nav-header.linkable {
+  cursor: pointer;
+}
+
+.fk-nav-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #878787;
+  letter-spacing: 0.3px;
+}
+
+.fk-nav-title span {
+  color: #878787;
+  transition: color 0.15s ease-in-out;
+}
+
+.linkable:hover .fk-nav-title span,
+.active-header .fk-nav-title span {
+  color: #2874f0;
+}
+
+.fk-icon {
+  font-size: 15px;
+}
+
+.fk-icon-blue {
+  color: #2874f0;
+}
+
+.fk-arrow-icon {
+  color: #878787;
+  font-size: 12px;
+}
+
+.fk-nav-divider {
+  height: 1px;
+  background-color: #f0f0f0;
+  margin: 4px 0;
+}
+
+.fk-subnav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+.fk-subnav-item {
+  display: block;
+  padding: 10px 20px 10px 52px;
+  font-size: 14px;
+  color: #212121;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.fk-subnav-item:hover,
+.fk-subnav-item.active {
+  background-color: #f5faff;
+  color: #2874f0;
+  font-weight: 500;
+}
+
+.fk-flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.fk-green-text {
+  color: #388e3c;
+  font-weight: 500;
+}
+
+.fk-logout-row {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* Sidebar Responsive */
+@media (max-width: 900px) {
+  .fk-sidebar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   1. CSS Variables / Design Tokens
+   ========================================= */
+:root {
+  --bg-app: #f8fafc;
+  --surface-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-focus: rgba(37, 99, 235, 0.18);
+  
+  --dark-btn: #0f172a;
+  --dark-btn-hover: #1e293b;
+  --dark-btn-focus: rgba(15, 23, 42, 0.15);
+
+  --border-color: #e2e8f0;
+  --border-focus: #3b82f6;
+
+  --success-bg: #ecfdf5;
+  --success-text: #065f46;
+  --success-border: #a7f3d0;
+
+  --error-bg: #fef2f2;
+  --error-text: #991b1b;
+  --error-border: #fecaca;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
+}
+
+/* Global Reset for layout protection */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   2. Main Wrapper
+   ========================================= */
+.tech-settings-wrapper {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+  color: var(--text-main);
+  background-color: var(--bg-app);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header Area */
+.tech-settings-header {
+  margin-bottom: 28px;
+}
+
+.tech-settings-header h1 {
+  font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+  margin: 0 0 6px 0;
+  word-break: break-word;
+}
+
+.tech-settings-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =========================================
+   3. Alert Notifications
+   ========================================= */
+.tech-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  line-height: 1.4;
+  word-break: break-word;
+  animation: fadeIn 0.25s ease;
+}
+
+.tech-alert.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid var(--success-border);
+}
+
+.tech-alert.error {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid var(--error-border);
+}
+
+/* =========================================
+   4. Card Sections
+   ========================================= */
+.tech-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s ease;
+}
+
+.tech-card:hover {
+  border-color: #cbd5e1;
+}
+
+.tech-card-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tech-card-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 4px 0;
+}
+
+.tech-card-header p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+/* =========================================
+   5. Dynamic Form Grids (No overlap/clipping)
+   ========================================= */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0; /* Prevents flex children from bursting boundary */
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  letter-spacing: 0.01em;
+}
+
+.input-field {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.input-field:hover {
+  border-color: #94a3b8;
+}
+
+.input-field:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--primary-focus);
+}
+
+.input-field::placeholder {
+  color: var(--text-light);
+}
+
+/* =========================================
+   6. Action Buttons
+   ========================================= */
+.form-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 11px 24px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.btn-modern:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-modern-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-modern-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-modern-primary:focus {
+  box-shadow: 0 0 0 3px var(--primary-focus);
+}
+
+.btn-modern-dark {
+  background-color: var(--dark-btn);
+  color: #ffffff;
+}
+
+.btn-modern-dark:hover:not(:disabled) {
+  background-color: var(--dark-btn-hover);
+  transform: translateY(-1px);
+}
+
+.btn-modern-dark:focus {
+  box-shadow: 0 0 0 3px var(--dark-btn-focus);
+}
+
+/* =========================================
+   7. Mobile Responsive Adjustments
+   ========================================= */
+@media (max-width: 640px) {
+  .tech-settings-wrapper {
+    padding: 20px 14px 40px;
+  }
+
+  .tech-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+  }
+
+  .form-grid-2,
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  .btn-modern {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

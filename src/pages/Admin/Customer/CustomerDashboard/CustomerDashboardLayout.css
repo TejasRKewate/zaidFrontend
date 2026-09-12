@@ -1,0 +1,44 @@
+/* Background & Outer Layout Container */
+.fk-dashboard-bg {
+  background-color: #f1f3f6;
+  min-height: calc(100vh - 80px);
+  padding: 16px 0 24px;
+  font-family: Roboto, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.fk-dashboard-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Outlet Right Content Area */
+.fk-main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.fk-content-card {
+  background-color: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  padding: 24px 32px;
+  min-height: 540px;
+  box-sizing: border-box;
+}
+
+/* Layout Responsive */
+@media (max-width: 900px) {
+  .fk-dashboard-container {
+    flex-direction: column;
+  }
+
+  .fk-content-card {
+    padding: 16px;
+  }
+}
