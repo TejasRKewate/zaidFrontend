@@ -143,7 +143,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { Check } from "lucide-react";
-import zaidinfotechVideo from "../../assets/vedio/zaidinfotech.mp4";
+
 
 const CompanyVideo = () => {
   const videoRef = useRef(null);
