@@ -41,6 +41,7 @@
 .tech-profile {
   padding: 20px 18px;
   display: flex;
+  /* flex-direction: column; */
   align-items: center;
   gap: 10px;
   border-bottom: 1px solid var(--border-light);
@@ -55,7 +56,8 @@
 
 .tech-profile-info {
   display: flex;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
   gap: 8px;
   overflow: hidden;
 }
@@ -74,6 +76,7 @@
   font-weight: 700;
   padding: 2px 6px;
   border-radius: 4px;
+
 }
 
 /* Sidebar Nav */
